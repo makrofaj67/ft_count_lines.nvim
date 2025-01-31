@@ -4,7 +4,7 @@ local M = {}
 
 local group = vim.api.nvim_create_augroup("CountLines", { clear = true })
 local ns = vim.api.nvim_create_namespace("count_lines") -- Namespace for extmarks
-local enabled = false -- State flag
+local enabled = true -- State flag
 local line_cache = {} -- Cache to track lines' content
 
 vim.treesitter.query.set(
@@ -17,7 +17,7 @@ vim.treesitter.query.set(
 
 -- Default options
 local default_options = {
-  enable_on_start = false, -- Whether to enable the count lines feature when Neovim starts
+  enable_on_start = true, -- Whether to enable the count lines feature when Neovim starts
   keybinding = "<leader>Fc" -- Default keybinding for enabling the count lines feature
 }
 
